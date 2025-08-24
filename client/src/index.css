@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 10%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(43, 74%, 49%);
+  --primary-foreground: hsl(0, 0%, 0%);
+  --secondary: hsl(210, 15%, 20%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(0, 0%, 70%);
+  --accent: hsl(43, 74%, 49%);
+  --accent-foreground: hsl(0, 0%, 0%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(43, 74%, 49%, 0.2);
+  --input: hsl(0, 0%, 20%);
+  --ring: hsl(43, 74%, 49%);
+  --radius: 0.5rem;
+  
+  /* Custom Viking colors */
+  --nordic-gold: hsl(43, 74%, 49%);
+  --bronze: hsl(28, 44%, 53%);
+  --viking-dark: hsl(0, 0%, 10%);
+  --rune-gray: hsl(210, 15%, 20%);
+  
+  /* Font families */
+  --font-cinzel: 'Cinzel', serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+.dark {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 10%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(43, 74%, 49%);
+  --primary-foreground: hsl(0, 0%, 0%);
+  --secondary: hsl(210, 15%, 20%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(0, 0%, 70%);
+  --accent: hsl(43, 74%, 49%);
+  --accent-foreground: hsl(0, 0%, 0%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(43, 74%, 49%, 0.2);
+  --input: hsl(0, 0%, 20%);
+  --ring: hsl(43, 74%, 49%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+@layer components {
+  .font-cinzel {
+    font-family: var(--font-cinzel);
+  }
+  
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+  
+  .text-nordic-gold {
+    color: var(--nordic-gold);
+  }
+  
+  .bg-nordic-gold {
+    background-color: var(--nordic-gold);
+  }
+  
+  .text-bronze {
+    color: var(--bronze);
+  }
+  
+  .bg-bronze {
+    background-color: var(--bronze);
+  }
+  
+  .bg-viking-dark {
+    background-color: var(--viking-dark);
+  }
+  
+  .bg-rune-gray {
+    background-color: var(--rune-gray);
+  }
+  
+  .border-nordic-gold {
+    border-color: var(--nordic-gold);
+  }
+  
+  .viking-gradient {
+    background: linear-gradient(135deg, var(--viking-dark) 0%, var(--rune-gray) 50%, var(--viking-dark) 100%);
+  }
+  
+  .rune-border {
+    border-image: linear-gradient(45deg, var(--nordic-gold), var(--bronze)) 1;
+  }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px var(--nordic-gold);
+    }
+    to {
+      box-shadow: 0 0 30px var(--nordic-gold), 0 0 40px var(--nordic-gold);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
